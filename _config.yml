@@ -21,7 +21,7 @@ repository               : "Musinghead/musinghead.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "kzy_avatar.jpg"
   name             : "Zhiyi Kuang"
   pronouns         : # example: "she/her"  
   bio              : "CS Ph.D candidate in State Key Lab of CAD&CG, Zhejiang University, supervised by Youyi Zheng"
