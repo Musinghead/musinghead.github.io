@@ -8,7 +8,7 @@
 
 # Basic Site Settings
 locale                   : "zh-CN"
-title                    : "Homepage"
+title                    : "Zhiyi's Homepage"
 title_separator          : "-"
 name                     : &name "Zhiyi Kuang"
 description              : &description ""
