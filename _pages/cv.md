@@ -7,6 +7,8 @@ redirect_from:
   - /resume
 ---
 
+[Download My CV PDF](http://musinghead.github.io/files/Zhiyi_Kuang_CV.pdf)
+
 Education
 ======
 * Ph.D. in Computer Science \| Sep. 2020 - Now \| State Key Lab of CAD&CG, Zhejiang University \| Supervisor: Youyi Zheng
