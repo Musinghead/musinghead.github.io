@@ -13,7 +13,7 @@ I am Zhiyi Kuang (匡志毅), a CS Ph.D. candidate (since 2020) in State Key Lab
 
 **E-mail:** musinghead@zju.edu.cn
 
-**Publications**
+## Publications
 
 {% for post in site.publications reversed %}
   {% include archive-single.html %}
