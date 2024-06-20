@@ -2,7 +2,7 @@
 title: "MonoHair: High-Fidelity Hair Modeling from a Monocular Video"
 collection: publications
 permalink: /publication/MonoHair
-excerpt: 'Keyu Wu, Lingchen Yang, **Zhiyi Kuang**, Yao Feng, Xutao Han, Yuefan Shen, Hongbo Fu, Kun Zhou, Youyi Zheng'
+excerpt: '[Keyu Wu](https://keyuwu-cs.github.io/), [Lingchen Yang](https://lingchen-chen.github.io/), **Zhiyi Kuang**, Yao Feng, Xutao Han, [Yuefan Shen](https://yuefanshen.net/), [Hongbo Fu](http://sweb.cityu.edu.hk/hongbofu/), [Kun Zhou](http://kunzhou.net/), Youyi Zheng'
 date: 2024-05-27
 venue: 'CVPR 2024'
 paperurl: 'https://arxiv.org/abs/2403.18356'
