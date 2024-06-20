@@ -2,7 +2,7 @@
 title: "DeepMVSHair: Deep Hair Modeling from Sparse Views"
 collection: publications
 permalink: /publication/DeepMVSHair
-excerpt: '**Zhiyi Kuang**, Yiyang Chen, Hongbo Fu, Kun Zhou, Youyi Zheng'
+excerpt: '**Zhiyi Kuang**, Yiyang Chen, [Hongbo Fu](http://sweb.cityu.edu.hk/hongbofu/), [Kun Zhou](http://kunzhou.net/), Youyi Zheng'
 date: 2022-11-30
 venue: 'SIGGRAPH Asia 2022 Conference'
 paperurl: 'https://dl.acm.org/doi/abs/10.1145/3550469.3555385'
