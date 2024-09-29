@@ -5,7 +5,7 @@ permalink: /publication/OLAT_Gaussians
 excerpt: '**Zhiyi Kuang**, [Yanchao Yang](https://yanchaoyang.github.io/), [Siyan Dong](https://siyandong.github.io/), Jiayue Ma, [Hongbo Fu](https://hongbofu.people.ust.hk/), Youyi Zheng'
 date: 2024-11-19
 venue: 'SIGGRAPH Asia 2024 Conference'
-paperurl: 'https://musinghead.github.io/publication/OLAT_Gaussians'
+paperurl: ''
 ---
 
 **Abstract**
