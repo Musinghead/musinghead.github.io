@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="OLAT Gaussians for Generic Relightable Appearance Acquisition">
+  <meta name="keywords" content="OLAT, 3DGS, Relighting, Relightable">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OLAT Gaussians for Generic Relightable Appearance Acquisition</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script> -->
+  <!-- <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script> -->
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.ico">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://musinghead.github.io">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <!-- <a class="navbar-item" href="https://hypernerf.github.io">
+            HyperNeRF
+          </a>
+          <a class="navbar-item" href="https://nerfies.github.io">
+            Nerfies
+          </a>
+          <a class="navbar-item" href="https://latentfusion.github.io">
+            LatentFusion
+          </a>
+          <a class="navbar-item" href="https://photoshape.github.io">
+            PhotoShape
+          </a> -->
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">OLAT Gaussians for Generic Relightable Appearance Acquisition</h1>
+          <h2 class="title is-5">SIGGRAPH Asia 2024 Conference Paper</h2>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://musinghead.github.io">Zhiyi Kuang</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://yanchaoyang.github.io/">Yanchao Yang</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://siyandong.github.io/">Siyan Dong</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="">Jiayue Ma</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://hongbofu.people.ust.hk/">Hongbo Fu</a><sup>3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="">Youyi Zheng</a><sup>1</sup>,
+            </span>
+
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>State Key Laboratory of CAD & CG, Zhejiang University,</span>
+            <span class="author-block"><sup>2</sup>The University of Hong Kong,</span>
+            <span class="author-block"><sup>3</sup>Hong Kong University of Science and Technology</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://musinghead.github.io/files/OLAT_Gaussians.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://musinghead.github.io/files/OLAT_Gaussians_supp.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Supplemental</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <!-- <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <!-- <span class="link-block">
+                <a href="https://github.com/google/nerfies"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span> -->
+              <!-- Dataset Link. -->
+              <!-- <span class="link-block">
+                <a href="https://github.com/google/nerfies/releases/tag/0.1"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+              </span> -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Point Light Relighting</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-cat">
+          <video poster="" id="cat" autoplay controls muted loop playsinline height="100%">
+            <source src="./assets/videos/cat_pl.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-catsmall">
+          <video poster="" id="catsmall" autoplay controls muted loop playsinline height="100%">
+            <source src="./assets/videos/catsmall_pl.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-cluttered">
+          <video poster="" id="cluttered" autoplay controls muted loop playsinline height="100%">
+            <source src="./assets/videos/cluttered_pl.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-cupfabric">
+          <video poster="" id="cupfabric" autoplay controls muted loop playsinline height="100%">
+            <source src="./assets/videos/cupfabric_pl.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-fish">
+          <video poster="" id="fish" autoplay controls muted loop playsinline height="100%">
+            <source src="./assets/videos/fish_pl.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-pikachu">
+          <video poster="" id="pikachu" autoplay controls muted loop playsinline height="100%">
+            <source src="./assets/videos/pikachu_pl.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-pixiu">
+          <video poster="" id="pixiu" autoplay controls muted loop playsinline height="100%">
+            <source src="./assets/videos/pixiu_pl.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <!-- <div class="item item-toby">
+          <img src="./assets/images/env1.png"
+                 class="envmap image"/>
+        </div> -->
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <h2 class="title is-5">OLAT Gaussians build relightable representations from one-light-at-a-time (OLAT) images for diverse objects.</h2>
+        <div class="content has-text-justified">
+          <p>
+            One-light-at-a-time (OLAT) images sample a broader range of object appearance changes 
+            than images captured under constant lighting and are superior as input to object relighting. 
+            Although existing methods have produced reasonable relighting quality using OLAT images, 
+            they utilize surface-like representations, limiting their capacity to model volumetric objects, 
+            such as furs. Besides, their rendering process is time-consuming and still far from being used in real-time applications. 
+            To address these issues, we propose OLAT Gaussians to build relightable representations of objects from multi-view OLAT images. 
+            We build our pipeline on 3D Gaussian Splatting (3DGS), which achieves real-time high-quality rendering. 
+            To augment 3DGS with relighting capability, we assign each Gaussian a learnable feature vector, 
+            serving as an index to query the objects' appearance field. Specifically, 
+            we decompose the appearance field into an incident illumination function and a scattering function. 
+            The former accounts for light transmittance and fore-shortening effects, 
+            while the latter represents the object's material properties to scatter light. 
+            Rather than using an off-the-shelf physically-based parametric rendering formulation, 
+            we model both functions using multi-layer perceptrons (MLPs). This makes our method suitable for various objects, e.g., 
+            opaque surfaces, semi-transparent volumes, furs, fabrics, etc. Given a camera view and a point light position, 
+            we compute each Gaussian's color as the product of the light intensity, the incident illumination value, 
+            and the scattering value, and then render the target image through the 3DGS rasterizer. 
+            To enhance rendering quality, we further utilize a proxy mesh to provide OLAT Gaussians with normals to improve highlights and visibility cues to improve shadows. 
+            Extensive experiments demonstrate that our method produces state-of-the-art rendering quality with significantly more details in texture-rich areas than previous methods. 
+            Our method also achieves real-time rendering, allowing users to interactively modify camera views and point light positions to get immediate rendering results, 
+            which are not available from the offline rendering of previous methods.
+          </p>
+          <!-- <p>
+          </p> -->
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+    
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!-- Animation. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Animation</h2>
+
+        <!-- Environmental Relighting. -->
+        <h3 class="title is-4">Environmental Relighting</h3>
+        <div class="content has-text-justified">
+          <p>
+            Trained models of OLAT Gaussians can be directly extended to environmental relighting.
+          </p>
+        </div>
+
+        <div class="columns is-vcentered interpolation-panel">
+          <div class="column has-text-centered">
+            <img src="./assets/images/env1.png"
+                 class="envmap image"/>
+            <p>Environment Map</p>
+          </div>
+          <div class="column has-text-centered">
+            <video id="fish_env1" autoplay controls muted loop playsinline height="100%">
+              <source src="./assets/videos/fish_env1.mp4"
+                      type="video/mp4">
+            </video>
+            <p>Relighting</p>
+          </div>
+        </div>
+
+        <div class="columns is-vcentered interpolation-panel">
+          <div class="column has-text-centered">
+            <img src="./assets/images/env2.png"
+                 class="envmap image"/>
+            <p>Environment Map</p>
+          </div>
+          <div class="column has-text-centered">
+            <video id="cupfabric_env2" autoplay controls muted loop playsinline height="100%">
+              <source src="./assets/videos/cupfabric_env2.mp4"
+                      type="video/mp4">
+            </video>
+            <p>Relighting</p>
+          </div>
+        </div>
+
+        <div class="columns is-vcentered interpolation-panel">
+          <div class="column has-text-centered">
+            <img src="./assets/images/env3.png"
+                 class="envmap image"/>
+            <p>Environment Map</p>
+          </div>
+          <div class="column has-text-centered">
+            <video id="furscene_env3" autoplay controls muted loop playsinline height="100%">
+              <source src="./assets/videos/furscene_env3.mp4"
+                      type="video/mp4">
+            </video>
+            <p>Relighting</p>
+          </div>
+        </div>
+
+        <div class="columns is-vcentered interpolation-panel">
+          <div class="column has-text-centered">
+            <img src="./assets/images/env4.png"
+                 class="envmap image"/>
+            <p>Environment Map</p>
+          </div>
+          <div class="column has-text-centered">
+            <video id="pixiu_env4" autoplay controls muted loop playsinline height="100%">
+              <source src="./assets/videos/pixiu_env4.mp4"
+                      type="video/mp4">
+            </video>
+            <p>Relighting</p>
+          </div>
+        </div>
+
+        <!-- <br/> -->
+        <!--/ Environmental Relighting. -->
+
+        <!-- Intrinsic Decomposition -->
+
+        <h3 class="title is-4">Intrinsic Decomposition</h3>
+        <div class="content has-text-justified">
+          <p>
+            Rendering is decomposed into incident illumination an scattering.
+          </p>
+        </div>
+
+        <div class="columns is-vcentered interpolation-panel">
+      
+          <div class="column has-text-centered">
+            <video id="pixiu incident" autoplay controls muted loop playsinline height="100%">
+              <source src="./assets/videos/pixiu_incident.mp4"
+                      type="video/mp4">
+            </video>
+            <p>Incident Illumination</p>
+          </div>
+          <div class="column has-text-centered">
+            <video id="pixiu scatter" autoplay controls muted loop playsinline height="100%">
+              <source src="./assets/videos/pixiu_scatter.mp4"
+                      type="video/mp4">
+            </video>
+            <p>Scattering</p>
+          </div>
+
+          <div class="column has-text-centered">
+            <video id="pixiu render" autoplay controls muted loop playsinline height="100%">
+              <source src="./assets/videos/pixiu_render.mp4"
+                      type="video/mp4">
+            </video>
+            <p>Rendering</p>
+          </div>
+        </div>
+
+        <div class="columns is-vcentered interpolation-panel">
+      
+          <div class="column has-text-centered">
+            <video id="fish incident" autoplay controls muted loop playsinline height="100%">
+              <source src="./assets/videos/fish_incident.mp4"
+                      type="video/mp4">
+            </video>
+            <p>Incident Illumination</p>
+          </div>
+          <div class="column has-text-centered">
+            <video id="fish scatter" autoplay controls muted loop playsinline height="100%">
+              <source src="./assets/videos/fish_scatter.mp4"
+                      type="video/mp4">
+            </video>
+            <p>Scattering</p>
+          </div>
+
+          <div class="column has-text-centered">
+            <video id="fish render" autoplay controls muted loop playsinline height="100%">
+              <source src="./assets/videos/fish_render.mp4"
+                      type="video/mp4">
+            </video>
+            <p>Rendering</p>
+          </div>
+        </div>
+
+        <!--/ Intrinsic Decomposition -->
+
+        <!-- Real-time Interaction. -->
+        <h3 class="title is-4">Real-time Interaction</h3>
+        <div class="content has-text-justified">
+          <p>
+            OLAT Gaussians render at ~30 FPS on a single NVIDIA 2080ti GPU and allow real-time interactions.
+          </p>
+        </div>
+        <div class="content has-text-centered">
+          <video id="replay-video"
+                 controls
+                 muted
+                 preload
+                 playsinline
+                 width="75%">
+            <source src="./assets/videos/cat_inter.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <!--/ Real-time Interaction. -->
+
+      </div>
+    </div>
+    <!--/ Animation. -->
+
+
+    <!-- Concurrent Work. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Related Links</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            There's a lot of excellent work that was introduced around the same time as ours.
+
+          </p>
+          <p>
+            <a href="https://gsrelight.github.io/">GS^3: Efficient Relighting with Triple Gaussian Splatting</a>
+          </p>
+          <p>
+            <a href="https://repo-sam.inria.fr/fungraph/generative-radiance-field-relighting/">A Diffusion Approach to Radiance Field Relighting using Multi-Illumination Synthesis</a>
+          </p>
+          <!-- <p>
+            <a href="https://arxiv.org/abs/2104.09125">Progressive Encoding for Neural Optimization</a> introduces an idea similar to our windowed position encoding for coarse-to-fine optimization.
+          </p>
+          <p>
+            <a href="https://www.albertpumarola.com/research/D-NeRF/index.html">D-NeRF</a> and <a href="https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/">NR-NeRF</a>
+            both use deformation fields to model non-rigid scenes.
+          </p>
+          <p>
+            Some works model videos with a NeRF by directly modulating the density, such as <a href="https://video-nerf.github.io/">Video-NeRF</a>, <a href="https://www.cs.cornell.edu/~zl548/NSFF/">NSFF</a>, and <a href="https://neural-3d-video.github.io/">DyNeRF</a>
+          </p>
+          <p>
+            There are probably many more by the time you are reading this. Check out <a href="https://dellaert.github.io/NeRF/">Frank Dellart's survey on recent NeRF papers</a>, and <a href="https://github.com/yenchenlin/awesome-NeRF">Yen-Chen Lin's curated list of NeRF papers</a>.
+          </p> -->
+        </div>
+      </div>
+    </div>
+    <!--/ Concurrent Work. -->
+
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@inproceedings{kuang2024olat,
+      title={OLAT Gaussians for Generic Relightable Appearance Acquisition},
+      author={Kuang, Zhiyi and Yang, Yanchao and Dong, Siyan and Ma, Jiayue and Fu, Hongbo and Zheng, Youyi},
+      booktitle={SIGGRAPH Asia 2024 Conference Papers},
+      pages={1--11},
+      year={2024}
+    }</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <!-- <a class="icon-link"
+         href="./static/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a> -->
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This website is constructed on <a href="https://github.com/nerfies/nerfies.github.io">Nerfies' template</a> and we thank the authors for sharing their <a href="https://nerfies.github.io/">website template</a>.
+          </p>
+          <!-- <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
